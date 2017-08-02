@@ -52,7 +52,8 @@ module.exports = function(grunt) {
             'js/gimmicks/twitter.js',
             'js/gimmicks/youtube_embed.js',
             'js/gimmicks/chart.js',
-            'js/gimmicks/yuml.js'
+            'js/gimmicks/yuml.js',
+            'js/gimmicks/plantuml.js'
         ],
 
         // files that we always inline (stuff not available on CDN)
@@ -69,7 +70,8 @@ module.exports = function(grunt) {
         externalJsFiles: [
             'extlib/js/jquery-1.8.3.min.js',
             'extlib/js/bootstrap-3.0.0.min.js',
-            'extlib/js/highlight-7.3.pack.min.js'
+            'extlib/js/highlight-7.3.pack.min.js',
+            'extlib/js/pako_deflate.min.js'
         ],
         externalCssFiles: [
             'extlib/css/highlight.github.css',
@@ -141,6 +143,7 @@ module.exports = function(grunt) {
                     jQuery: true,
                     marked: true,
                     google: true,
+                    pako:true,
                     hljs: true,
                     /* leaflet.js*/
                     L: true,
