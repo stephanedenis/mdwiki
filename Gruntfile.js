@@ -44,6 +44,7 @@ module.exports = function(grunt) {
             //'js/gimmicks/github_gist.js',
             'js/gimmicks/gist.js',
             'js/gimmicks/googlemaps.js',
+            'js/gimmicks/plantuml.js',
             'js/gimmicks/highlight.js',
             'js/gimmicks/iframe.js',
             'js/gimmicks/math.js',
@@ -52,8 +53,7 @@ module.exports = function(grunt) {
             'js/gimmicks/twitter.js',
             'js/gimmicks/youtube_embed.js',
             'js/gimmicks/chart.js',
-            'js/gimmicks/yuml.js',
-            'js/gimmicks/plantuml.js'
+            'js/gimmicks/yuml.js'
         ],
 
         // files that we always inline (stuff not available on CDN)

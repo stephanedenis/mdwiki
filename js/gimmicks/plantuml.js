@@ -84,19 +84,9 @@ function getImageUrlFromPlantUmlCode(s) {
     'use strict';
 
     function plantuml($link, opt, text) {
-        return $link.each(function(i, e) {
-
-            var $this = $(e);
-            var data = $this.attr('href');
-            var title = $this.attr('title');
-
-            title = (title ? title : '');
-
-            /* `FOOBAR´ => (FOOBAR)
-            May need a better alternative because PlantUML use () in many cases
-            */
-            data = data.replace(new RegExp('`', 'g'), '(').replace(new RegExp('´', 'g'), ')');
-
+        return $('pre code[class^=lang-plantuml]').each(function() {
+            var $this = $(this);
+            var data = $this[0];
             var $img = $('<img src="' + getImageUrlFromPlantUmlCode(data) + '">');
 
             $this.replaceWith($img);
