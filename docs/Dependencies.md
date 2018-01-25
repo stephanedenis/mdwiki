@@ -1,24 +1,48 @@
 [![Build Status](https://travis-ci.org/Dynalon/mdwiki.png?branch=master)](https://travis-ci.org/Dynalon/mdwiki)
-
-
-Dependencies
 ===
+
+```plantuml
+
+component "mdwiki.html" as mdwiki{
+    [prism] as prism
+    [jquery colorbox] as jqcb
+    [handlebars] as handlebar
+    [affix] as affix
+    [dropdown] as dropdown
+    [jquery] as jquery
+}
+
+[plantuml] as plantuml
+[config.json] as config
+[navigation.json] as navigation
+
+mdwiki --> config
+mdwiki --> navigation
+mdwiki --> Http
+Http --> plantuml
+```
+
+Gimmicks
+---
 
 Libraries
 ---
-colorbox.css
-colorbox.min.js
-jquery.min.js
-bootstrap.min.js
-highlight.min.js
-pako_deflate.min.js
-highlight.github.css
-bootstrap.min.css
+
+*prism.js
+    Syntax highlighter
+    http://prismjs.com/
+*jquery.colorbox.js
+    Customizable lightbox for jquery
+    http://www.jacklmoore.com/colorbox/
 
 References
 ---
-ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js
-netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js
-yandex.st/highlightjs/7.3/highlight.min.js
-netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css
-yandex.st/highlightjs/7.3/styles/github.min.css
+
+*handlebars.runtime.js
+    Help for template
+    http://handlebarsjs.com/
+*affix.js
+
+*dropdown.js
+
+*jquery.js
