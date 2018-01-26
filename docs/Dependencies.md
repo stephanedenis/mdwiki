@@ -6,43 +6,37 @@
 component "mdwiki.html" as mdwiki{
     [prism] as prism
     [jquery colorbox] as jqcb
-    [handlebars] as handlebar
-    [affix] as affix
-    [dropdown] as dropdown
     [jquery] as jquery
+    [bootstrap]
+    [node]
 }
 
 [plantuml] as plantuml
 [config.json] as config
-[navigation.json] as navigation
+[navigation.md] as navigation
 
 mdwiki --> config
 mdwiki --> navigation
 mdwiki --> Http
 Http --> plantuml
+
 ```
 
-Gimmicks
----
-
-Libraries
----
-
-*prism.js
-    Syntax highlighter
-    http://prismjs.com/
-*jquery.colorbox.js
-    Customizable lightbox for jquery
-    http://www.jacklmoore.com/colorbox/
-
-References
----
-
-*handlebars.runtime.js
-    Help for template
-    http://handlebarsjs.com/
-*affix.js
-
-*dropdown.js
-
-*jquery.js
+Name|Description|Link
+----|-----------|----
+prism|Syntax highlighter|http://prismjs.com/
+jquery colorbox|Customizable lightbox for jquery|http://www.jacklmoore.com/colorbox/
+jquery|See website|https://jquery.com/
+prism
+googlemaps
+disqus
+editme
+facebooklike
+forkmeongithub
+gist
+iframe
+math
+leaflet
+twitter
+youtube_embed
+yuml
