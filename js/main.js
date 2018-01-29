@@ -3,9 +3,9 @@
 
 
     if (window.location.href.indexOf('SpecRunner') >= 0)
-        $.initMDwiki(undefined, false);
+        $.md.initMDwiki(undefined, false);
     else
-        $.initMDwiki(undefined, true);
+        $.md.initMDwiki(undefined, true);
 
 
 }(jQuery));
