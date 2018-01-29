@@ -88,7 +88,7 @@ module MDwiki.Core {
             else if (this.config.lineBreaks === 'gfm')
                 options.breaks = true;
 
-            marked.setOptions(options);
+            marked.setOptions(options); // useless since it's set anyway in the transformer's constructor
 
             // get sample markdown
             var transformer = new MDwiki.Markdown.Markdown(markdown, options);
@@ -118,7 +118,7 @@ module MDwiki.Core {
                     dataType: 'text'
                 };
                 $.ajax(ajaxReq).done(function(data) {
-                    // TODO do this elsewhere
+                    // TODO: do this elsewhere
                     md = data;
                     done();
                 }).fail(function() {
@@ -181,7 +181,7 @@ module MDwiki.Core {
             });
 
             this.stages.getStage('postgimmick').subscribe(function(done) {
-                // hide if has no links
+                // hide if has no links FIXME: Should be a TODO???
                 done();
             });
         }
