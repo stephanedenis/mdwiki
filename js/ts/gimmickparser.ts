@@ -102,7 +102,7 @@ module MDwiki.Gimmick {
         private getSinglelineGimmicks(): SinglelineGimmickReference[] {
             var $verbatim = this.domElement.find("code:not(pre > code)");
             var singlelineGimmicks = [];
-            $.each($verbatim, (i,e) => {
+            $.each($verbatim, (i,e) => { 
                 // TODO max split 1 time, watch for " " if no options are present
                 var slg = new SinglelineGimmickReference();
                 slg.domElement = $(e);
