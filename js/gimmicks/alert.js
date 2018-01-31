@@ -1,3 +1,6 @@
+// FIXME: This souldn't be implemented as a gimmick
+// FIXME: It should be a parser ran in the gimmick stage (a little like prism)
+
 (function($) {
     var alertGimmick = new MDwiki.Gimmick.Gimmick('alert');
     var alertHandler = new MDwiki.Gimmick.GimmickHandler('multiline');
