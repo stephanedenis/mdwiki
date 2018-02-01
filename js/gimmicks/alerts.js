@@ -2,7 +2,7 @@
 // FIXME: It should be a parser ran in the gimmick stage (a little like prism)
 
 (function($) {
-    var alertGimmick = new MDwiki.Gimmick.Gimmick('alert');
+    var alertGimmick = new MDwiki.Gimmick.Gimmick('alerts');
     var alertHandler = new MDwiki.Gimmick.GimmickHandler('multiline');
     alertHandler.loadStage = 'ready';
 

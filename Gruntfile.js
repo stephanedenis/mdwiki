@@ -42,7 +42,7 @@ module.exports = function(grunt) {
             'js/gimmicks/prism.js',
 
             //'js/gimmicks/googlemaps.js',
-            'js/gimmicks/alert.js',
+            'js/gimmicks/alerts.js',
             //'js/gimmicks/colorbox.js',
             //'js/gimmicks/carousel.js',
             //'js/gimmicks/disqus.js',
