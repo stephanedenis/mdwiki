@@ -28,7 +28,7 @@
         var trigger = params.trigger;
         var text = params.text;
 
-        domElement.addClass("language-python");
+        domElement.addClass("language-csharp");
         done();
     };
 
