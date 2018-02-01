@@ -1,69 +1,72 @@
 # Test plan
 
-## Base functionnalities
+## Markdown styling
 
-### Markdown styling
+* test
+* test2
 
-## Gimmicks
+## alerts
 
-### alerts
+This is a warning in yellow:
 
 Warning: This is a warning
 
+This is a note in blue:
+
 Note: This is a note
+
+This is a hint in green:
 
 Hint: This is a hint
 
-### carousel
+## carousel
 
-### colorbox
+## Colorbox\.
 
-### disqus
+## disqus
 
-[gimmick:Disqus](your_disqus_shortname)
+## editme
 
-### editme
-
-### facebook like
+## facebook like
 
 [gimmick:FacebookLike](http://www.facebook.com)
 
-### fork me on github
+## fork me on github
 
 [gimmick:ForkMeOnGitHub (position: 'left', color: 'darkblue') ](http://www.github.com/Dynalon/mdwiki)
 
-### gist
+## gist
 
 [gimmick:gist](5641564)
 
-### googlemaps¸
+## googlemaps¸
 
 [gimmick:googlemaps](Madison Square Garden, NY)
 
-### iframe
+## iframe
 
-### leaflet
+## leaflet
 
-### math
+## math
 
 [gimmick: math]()
 $$ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$
 Diameter \\( d \\) of a circle given area \\( A \\) can by obtained via \\(d=\sqrt{\frac{4A}{\pi}}\\)
 
-### prism
+## prism
 
-### templating
+## templating
 
-### twitter
+## twitter
 
 [gimmick:TwitterFollow](@timodoerr)
 
-### youtube_embed
+## youtube_embed
 
 [](http://www.youtube.com/watch?v=RMINSD7MmT4)
 
-### yuml
+## yuml
 
 [gimmick:yuml]( [HttpContext]uses -.->[Response] )
 
-### plantuml
+## plantuml
