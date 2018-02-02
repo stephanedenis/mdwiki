@@ -38,7 +38,7 @@ module.exports = function(grunt) {
             'js/bootstrap.js',
 
             // gimmicks
-            //'js/gimmicks/templating.js',
+            'js/gimmicks/templating.js',
             'js/gimmicks/prism.js',
 
             //'js/gimmicks/googlemaps.js',

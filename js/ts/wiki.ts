@@ -181,7 +181,7 @@ module MDwiki.Core {
             });
 
             this.stages.getStage('postgimmick').subscribe(function(done) {
-                // hide if has no links FIXME: Should be a TODO???
+                // hide if has no links FIXME: Should be a TODO:???
                 done();
             });
         }
