@@ -38,11 +38,11 @@ module.exports = function(grunt) {
             'js/bootstrap.js',
 
             // gimmicks
-            //'js/gimmicks/templating.js',
+            'js/gimmicks/templating.js',
             'js/gimmicks/prism.js',
 
             //'js/gimmicks/googlemaps.js',
-            'js/gimmicks/alert.js',
+            'js/gimmicks/alerts.js',
             //'js/gimmicks/colorbox.js',
             //'js/gimmicks/carousel.js',
             //'js/gimmicks/disqus.js',
@@ -55,7 +55,8 @@ module.exports = function(grunt) {
             //'js/gimmicks/leaflet.js',
             //'js/gimmicks/twitter.js',
             //'js/gimmicks/youtube_embed.js',
-            //'js/gimmicks/yuml.js'
+            //'js/gimmicks/yuml.js',
+            'js/gimmicks/plantuml.js'
 
         ],
 
@@ -70,6 +71,7 @@ module.exports = function(grunt) {
             'node_modules/handlebars/dist/handlebars.runtime.min.js',
             'extlib/js/jquery.colorbox.min.js',
             'extlib/js/prism.js',
+            'extlib/js/pako_deflate.min.js',
             'bower_components/bootstrap/js/affix.js',
             'bower_components/bootstrap/js/dropdown.js',
         ],
@@ -84,6 +86,7 @@ module.exports = function(grunt) {
             'node_modules/handlebars/dist/handlebars.runtime.js',
             'extlib/js/prism.js',
             'extlib/js/jquery.colorbox.js',
+            'extlib/js/pako_deflate.min.js'
         ],
 
         ts: {
