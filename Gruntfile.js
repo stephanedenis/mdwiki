@@ -38,11 +38,11 @@ module.exports = function(grunt) {
             'js/bootstrap.js',
 
             // gimmicks
-            //'js/gimmicks/templating.js',
+            'js/gimmicks/templating.js',
             'js/gimmicks/prism.js',
 
             //'js/gimmicks/googlemaps.js',
-            'js/gimmicks/alert.js',
+            'js/gimmicks/alerts.js',
             //'js/gimmicks/colorbox.js',
             //'js/gimmicks/carousel.js',
             //'js/gimmicks/disqus.js',
