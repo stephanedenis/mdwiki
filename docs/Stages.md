@@ -22,5 +22,5 @@ A stage is considered done when all of it's subscribed function(s) have been cal
 
 ## In the code
 
-THe code for the staging system all resides in the `/js/ts/stage.ts` file.
-It contains descriptions of what a subscribed function should be (the `SubscribedFunc` and `DoneCallback` interfaces) vand the code definition for the `StageChain` and the `Stage`.
+The code for the staging system all resides in the `/js/ts/stage.ts` file.
+It contains descriptions of what a subscribed function should be (the `SubscribedFunc` and `DoneCallback` interfaces) vand the code definition for the `StageChain` and the `Stage` classes.

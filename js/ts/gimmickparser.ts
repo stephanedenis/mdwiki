@@ -71,6 +71,7 @@ module MDwiki.Gimmick {
                 params = params.replace (replace_quotes, '"');
                 // finally, try if the json object is valid
                 try {
+                    // FIXME: IS there an alternative for this task beside using eval (eval is evil) see jslint, eslint and jshint warning #061
                     /*jshint -W061 */
                     args = eval(params);
                 } catch (err) {

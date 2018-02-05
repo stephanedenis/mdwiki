@@ -1,7 +1,7 @@
 [Build](Build.md)
 [Dependencies](Dependencies.md)
 [Gimmicks](Gimmicks.md)
-[Running Procees(es)](Process.md)
+[Running Process(es)](Process.md)
 [How to run](RunMDWiki.md)
 [Test Plan](TestPlan.md)
 [Staging system](Stages.md)
