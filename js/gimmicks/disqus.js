@@ -1,15 +1,20 @@
 (function($) {
-    var disqusHandler = new MDwiki.Core.GimmickHandler('link');
+    var disqusGimmick = new MDwiki.Gimmick.Gimmick('disqus');
+    var disqusHandler = new MDwiki.Gimmick.GimmickHandler('link');
+
+    disqusGimmick.addHandler(disqusHandler);
+    $.md.wiki.gimmicks.registerGimmick(disqusGimmick);
+
     var dqAlreadyDone = false;
-    disqusHandler.loadStage = 'ready';
     disqusHandler.callback = function (params, done) {
-        disqus(params.domElement, params.options, params.text);
+        disqus(params.domElement, params.text, params.options);
+        done();
     };
 
-    var disqusGimmick = new MDwiki.Core.Gimmick('disqus', disqusHandler);
-    $.md.wiki.gimmicks.registerGImmick(disqusGimmick);
+    function disqus($link, href, opt) {
+        if(dqAlreadyDone) return;
 
-    function disqus($links, opt, text) {
+        dqAlreadyDone = true;
         var protocol = window.location.protocol;
         var default_options = {identifier: ''};
         var options = $.extend(default_options, opt);
@@ -19,5 +24,39 @@
             '</div>'
         );
         disqus_div.css('margin-top', '2em');
+
+        var disqus_shortname = href;
+        $link.remove();
+        $('#md-content').append(disqus_div);
+
+        if($('#disqus_thread').length > 0) {
+            (function() {
+                // all disqus_ variables are used by the script, they
+                // change the config behavious.
+                // see: http://help.disqus.com/customer/portal/articles/472098-javascript-configuration-variables
+
+                // set to 1 if developing, or the site is password protected or not
+                // publicaly accessible
+                //var disqus_developer = 1;
+
+                // by default, disqus will use the current url to determine a thread
+                // since we might have different parameters present, we remove them
+                // disqus_* vars HAVE TO BE IN GLOBAL SCOPE
+
+                var disqus_url = window.location.href;
+                var disqus_identifier = (options.identifier.length > 0) ? options.identifier : disqus_url;
+
+                // dynamically load the disqus script
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = 
+                    protocol +
+                    '//' +
+                    disqus_shortname +
+                    '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        }
     }
 }(jQuery));

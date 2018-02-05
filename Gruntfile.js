@@ -45,7 +45,7 @@ module.exports = function(grunt) {
             'js/gimmicks/alerts.js',
             //'js/gimmicks/colorbox.js',
             //'js/gimmicks/carousel.js',
-            //'js/gimmicks/disqus.js',
+            'js/gimmicks/disqus.js',
             //'js/gimmicks/editme.js',
             //'js/gimmicks/facebooklike.js',
             //'js/gimmicks/forkmeongithub.js',
