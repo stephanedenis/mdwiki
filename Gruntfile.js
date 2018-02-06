@@ -56,8 +56,12 @@ module.exports = function(grunt) {
             //'js/gimmicks/twitter.js',
             'js/gimmicks/youtube_embed.js',
             //'js/gimmicks/yuml.js',
-            'js/gimmicks/plantuml.js'
+            'js/gimmicks/plantuml.js',
 
+            // default gimmicks
+            'js/gimmicks/default/singleline.js',
+            'js/gimmicks/default/multiline.js',
+            'js/gimmicks/default/link.js'
         ],
 
         // REMEMBER:
