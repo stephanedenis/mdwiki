@@ -59,9 +59,9 @@ module.exports = function(grunt) {
             'js/gimmicks/plantuml.js',
 
             // default gimmicks
-            'js/gimmicks/default/singleline.js',
-            'js/gimmicks/default/multiline.js',
-            'js/gimmicks/default/link.js'
+            'js/gimmicks/defaults/singleline.js',
+            'js/gimmicks/defaults/multiline.js',
+            'js/gimmicks/defaults/link.js'
         ],
 
         // REMEMBER:
