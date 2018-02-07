@@ -86,7 +86,7 @@ module MDwiki.Gimmick {
         findHandler(kind: string, trigger: string) {
             var match = null;
             this.handlers.forEach(handler => {
-                if (handler.trigger == trigger && handler.kind == kind)
+                if (handler.trigger.toLowerCase() == trigger.toLowerCase() && handler.kind.toLowerCase() == kind.toLowerCase())
                     match = handler;
             });
             return match;
