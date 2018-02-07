@@ -283,7 +283,7 @@ module MDwiki.Legacy {
 
                     var $this = $(this);
                     var anchortext = util.getInpageAnchorText($this.toptext());
-                    //$.md.scrollToInPageAnchor(anchortext);
+                    $.md.scrollToInPageAnchor(anchortext);
                 });
                 $a.text($heading.toptext());
                 return $a;
