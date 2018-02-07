@@ -237,7 +237,7 @@ module MDwiki.Gimmick {
             }
 
             ref.trigger = trigger;
-            if(ref.options === null)
+            if(ref.options === null || ref.options === undefined)
                 ref.options = {};
             ref.options.__originalTrigger__ = originalTrigger;
             return this.selectHandler(gmkType, trigger);

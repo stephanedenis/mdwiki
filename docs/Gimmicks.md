@@ -29,13 +29,6 @@ Gimmicks are used in a markdown files and are written as followed in them:
   with multiline if wanted
   ```
   ~~~
-  or like that:
-  ~~~
-  ```gimmick:GimmickName(params)
-  Some Text
-  with multiline if wanted
-  ```
-  ~~~
 * Link gimmicks `link`:  
   Written like that:
   ```
@@ -46,6 +39,8 @@ Gimmicks are used in a markdown files and are written as followed in them:
   [gimmick:GimmickName (params)](some text wanted by the gimmick)
   ```
   [More infos about link gimmicks](http://http://dynalon.github.io/mdwiki/#!gimmicks.md)
+
+### N.B.: multiline gimmicks can't have options. If a "multiline" gimmick has options, it will be considered a singleline gimmick by the sytstem.
 
 ## How it works (internally)
 
