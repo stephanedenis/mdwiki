@@ -4,7 +4,7 @@
     slHandler.loadStage = 'pregimmick';
 
     slHandler.callback = function (params, done) {
-        var trigger = params.trigger;
+        var trigger = params.options.__originalTrigger__;
         var text = params.text;
         var options = params.options;
         
@@ -12,11 +12,15 @@
         var $p = $('<p/>');
         var $pre = $('<pre/>');
 
-        var msg1 = 'Attention! a gimmick with the trigger "' + trigger + '" has been found!\n';
+        var msg1 = 'Attention! a singleline gimmick with the trigger "' + trigger + '" has been found!\n';
         msg1 += 'It has the following text: "' + text + '"\n';
         msg1 += ' and has the following option(s):';
         $p.text(msg1);
-        $pre.text(JSON.stringify(options, null, 4));
+        $pre.text(JSON.stringify(options, function(key, e){
+            if(key=='__originalTrigger__')
+                return undefined;
+            return e;
+        }, 4));
 
         $p.append($pre);
         $div.append($p);
