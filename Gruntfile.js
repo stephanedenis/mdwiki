@@ -65,6 +65,7 @@ module.exports = function(grunt) {
         // * ALWAYS ADD EACH FILE TO BOTH minified/unminified SECTIONS!
         cssFiles: [
             'tmp/main.min.css',
+            'bower_components/bootstrap/dist/css/bootstrap.min.css'
         ],
         jsFiles: [
             'bower_components/jquery/jquery.min.js',
@@ -77,7 +78,8 @@ module.exports = function(grunt) {
         ],
         // for debug builds use unminified versions:
         unminifiedCssFiles: [
-            'tmp/main.css'
+            'tmp/main.css',
+            'bower_components/bootstrap/dist/css/bootstrap.min.css'
         ],
         unminifiedJsFiles: [
             'bower_components/jquery/jquery.js',
