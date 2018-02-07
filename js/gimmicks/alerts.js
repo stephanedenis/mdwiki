@@ -54,7 +54,7 @@
         $.each(exp, function (i, trigger) {
             // we match only paragraphs in wich the `trigger` expression
             // is followed by a '!' or a ':'
-            var re = new RegExp(trigger + '(!|:)+.*', 'i');
+            var re = new RegExp('^' + trigger + '\s?(!|:)+.*', 'i');
             if(txt.match(re) !== null) {
                 if ($.inArray(trigger, note) >= 0)
                 {
@@ -75,7 +75,7 @@
     // Search all 
     function alertify(done) {
         // Get all the paragraph in the document
-        var $paragraphs = $('div.md-text').find('p.md-paragraph-content');
+        var $paragraphs = $('div').find('p');
         
         $paragraphs.each(function(i, $p) {
             var type = get_alert_type($p.innerText);
