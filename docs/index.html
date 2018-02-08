@@ -17846,7 +17846,7 @@ var MDwiki;
             Gimmick.prototype.findHandler = function (kind, trigger) {
                 var match = null;
                 this.handlers.forEach(function (handler) {
-                    if (handler.trigger == trigger && handler.kind == kind)
+                    if (handler.trigger.toLowerCase() == trigger.toLowerCase() && handler.kind.toLowerCase() == kind.toLowerCase())
                         match = handler;
                 });
                 return match;
@@ -17932,22 +17932,50 @@ var MDwiki;
                 var _this = this;
                 parser.singlelineReferences.forEach(function (ref) {
                     var handler = _this.selectHandler('singleline', ref.trigger);
+                    if (handler === null)
+                        handler = _this.replaceGimmickWithDefault(ref, 'singleline');
                     _this.stages.getStage(handler.loadStage).subscribe(function (done) {
                         handler.callback(ref, done);
                     });
                 });
                 parser.multilineReferences.forEach(function (ref) {
                     var handler = _this.selectHandler('multiline', ref.trigger);
+                    if (handler === null)
+                        handler = _this.replaceGimmickWithDefault(ref, 'multiline');
                     _this.stages.getStage(handler.loadStage).subscribe(function (done) {
                         handler.callback(ref, done);
                     });
                 });
                 parser.linkReferences.forEach(function (ref) {
                     var handler = _this.selectHandler('link', ref.trigger);
+                    if (handler === null)
+                        handler = _this.replaceGimmickWithDefault(ref, 'link');
                     _this.stages.getStage(handler.loadStage).subscribe(function (done) {
                         handler.callback(ref, done);
                     });
                 });
+            };
+            GimmickLoader.prototype.replaceGimmickWithDefault = function (ref, gmkType) {
+                var trigger;
+                var originalTrigger = ref.trigger;
+                switch (gmkType.toLowerCase()) {
+                    case 'singleline':
+                        trigger = 'defaultsl';
+                        break;
+                    case 'multiline':
+                        trigger = 'defaultml';
+                        break;
+                    case 'link':
+                        trigger = 'defaultlnk';
+                        break;
+                    default:
+                        return null;
+                }
+                ref.trigger = trigger;
+                if (ref.options === null || ref.options === undefined)
+                    ref.options = {};
+                ref.options.__originalTrigger__ = originalTrigger;
+                return this.selectHandler(gmkType, trigger);
             };
             return GimmickLoader;
         }());
@@ -19198,7 +19226,103 @@ var MDwiki;
     
 
 }(jQuery));
-</script>
+
+(function($) {
+    var slGimmick = new MDwiki.Gimmick.Gimmick('defaultsl');
+    var slHandler = new MDwiki.Gimmick.GimmickHandler('singleline');
+    slHandler.loadStage = 'pregimmick';
+
+    slHandler.callback = function (params, done) {
+        var trigger = params.options.__originalTrigger__;
+        var text = params.text;
+        var options = params.options;
+        
+        var $div = $('<div></div>');
+        var $p = $('<p/>');
+        var $pre = $('<pre/>');
+
+        var msg1 = 'Attention! a singleline gimmick with the trigger "' + trigger + '" has been found!\n';
+        msg1 += 'It has the following text: "' + text + '"\n';
+        msg1 += ' and has the following option(s):';
+        $p.text(msg1);
+        $pre.text(JSON.stringify(options, function(key, e){
+            if(key=='__originalTrigger__')
+                return undefined;
+            return e;
+        }, 4));
+
+        $p.append($pre);
+        $div.append($p);
+
+        $(params.domElement).replaceWith($div);
+        done();
+    };
+
+    slGimmick.addHandler(slHandler);
+    $.md.wiki.gimmicks.registerGimmick(slGimmick);
+}(jQuery));
+(function($) {
+    var mlGimmick = new MDwiki.Gimmick.Gimmick('defaultml');
+    var mlHandler = new MDwiki.Gimmick.GimmickHandler('multiline');
+    mlHandler.loadStage = 'pregimmick';
+
+    mlHandler.callback = function (params, done) {
+        var trigger = params.options.__originalTrigger__;
+        var text = params.text;
+        var options = params.options;
+        
+        var $div = $('<div></div>');
+        var $p = $('<p/>');
+
+        var msg1 = 'Attention! a multiline gimmick with the trigger "' + trigger + '" has been found!\n';
+        msg1 += 'It has the following text: "' + text + '\n';
+        $p.text(msg1);
+        
+        $div.append($p);
+
+        // multine gimmicks are inside a pre but it's domElement is the code block inside it
+        // so we replace the parent pre with the div that we constructed
+        $(params.domElement).parent().replaceWith($div);
+        done();
+    };
+
+    mlGimmick.addHandler(mlHandler);
+    $.md.wiki.gimmicks.registerGimmick(mlGimmick);
+}(jQuery));
+(function($) {
+    var lnkGimmick = new MDwiki.Gimmick.Gimmick('defaultlnk');
+    var lnkHandler = new MDwiki.Gimmick.GimmickHandler('link');
+    lnkHandler.loadStage = 'pregimmick';
+
+    lnkHandler.callback = function (params, done) {
+        var trigger = params.options.__originalTrigger__;
+        var text = params.text;
+        var options = params.options;
+        
+        var $div = $('<div></div>');
+        var $p = $('<p/>');
+        var $pre = $('<pre/>');
+
+        var msg1 = 'Attention! a link gimmick with the trigger "' + trigger + '" has been found!\n';
+        msg1 += 'It has the following text: "' + text + '"\n';
+        msg1 += ' and has the following option(s):';
+        $p.text(msg1);
+        $pre.text(JSON.stringify(options, function(key, e){
+            if(key=='__originalTrigger__')
+                return undefined;
+            return e;
+        }, 4));
+
+        $p.append($pre);
+        $div.append($p);
+
+        $(params.domElement).replaceWith($div);
+        done();
+    };
+
+    lnkGimmick.addHandler(lnkHandler);
+    $.md.wiki.gimmicks.registerGimmick(lnkGimmick);
+}(jQuery));</script>
 <!-- END tmp/MDwiki.js -->
 
 </head>
