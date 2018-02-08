@@ -260,13 +260,15 @@ module MDwiki.Legacy {
 
             var affixDiv: any = $('<div id="md-page-menu" />');
 
-            //var top_spacing = $('#md-menu').height() + 15;
-            var top_spacing = 70;
+            var top_spacing = $('#md-menu').height() + 75;
+            var bottom_spacing = $('#md-footer').height() + 50;
             affixDiv.affix({
                 //offset: affix.position() - 50,
-                offset: 130
+                //offset: 130
             });
+            var menuHeight = window.innerHeight - top_spacing - bottom_spacing;
             affixDiv.css('top', top_spacing);
+            affixDiv.css('height', menuHeight);
             //affix.css('top','-250px');
 
             var $pannel = $('<div class="panel panel-default"><ul class="list-group"/></div>');
