@@ -1,15 +1,14 @@
 [![Build Status](https://travis-ci.org/Dynalon/mdwiki.png?branch=master)](https://travis-ci.org/Dynalon/mdwiki)
 
-
 How to build MDWiki
 ======
 
 1. Install node.js >= 0.10 and npm (if not included)
 2. Install deps and build MDwiki (you need automake installed - if you are on Windows check the contents of the Makefile for the list of commands to run them manually):
 
-    ```bash
-    make
-    ```
+  ```bash
+  make
+  ```
 
 3. Find the `mdwiki.html` in the `dist/` folder
 

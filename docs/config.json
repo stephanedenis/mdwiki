@@ -1,6 +1,6 @@
 {
     "useSideMenu": true,
     "lineBreaks": "gfm",
-    "additionalFooterText": "All content and images &copy; by John Doe",
+    "additionalFooterText": "© All content and images by Stephane Denis, Jonathan Gauvin and Nicolas Lapointe.",
     "anchorCharacter": "#"
 }
