@@ -13,3 +13,8 @@ int c = i + b;
 ```
 
 test
+
+![](http://placekitten.com/g/1200/300 "A kitten")
+test
+test
+test
