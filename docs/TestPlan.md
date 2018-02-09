@@ -64,6 +64,7 @@ Hint: This is a hint
 ## Missing gimmick (non existing/not implemented gimmicks)
 
 `gimmick:qwerty ({ID: '1', o: {l:'lol'}})`
+
 `gimmick:abcdef`
 
 ```gimmick:Some
