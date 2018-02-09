@@ -12,7 +12,7 @@
         var $p = $('<p/>');
         var $pre = $('<pre/>');
 
-        var msg1 = 'Attention! a link gimmick with the trigger "' + trigger + '" has been found!\n';
+        var msg1 = 'Danger! a link gimmick with the trigger "' + trigger + '" has been found!\n';
         msg1 += 'It has the following text: "' + text + '"\n';
         msg1 += ' and has the following option(s):';
         $p.text(msg1);

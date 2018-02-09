@@ -100,9 +100,11 @@
             
             case 'hint':
                 $p.className += ' alert-success';
+                break;
 
             case 'danger':
                 $p.className += ' alert-danger';
+                break;
             }
         });
 

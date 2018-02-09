@@ -61,6 +61,10 @@ This is a hint in green:
 
 Hint: This is a hint
 
+This is a danger in red:
+
+Danger: This is a danger
+
 ## Missing gimmick (non existing/not implemented gimmicks)
 
 `gimmick:qwerty ({ID: '1', o: {l:'lol'}})`
