@@ -76,7 +76,7 @@ module MDwiki.Legacy {
                 // so we apply the corresponding float classes
 
                 //Create a bug that add div in code blocks
-                /*var templ = new Template('layout/paragraph');
+                var templ = new Template('layout/paragraph');
                 var $inserted_node = templ.insertAfter($p);
 
                 var floatClass = self.getFloatClass($p);
@@ -86,7 +86,7 @@ module MDwiki.Legacy {
                     $inserted_node.find(".md-paragraph-outro").append(image_children);
 
                 $inserted_node.find("p").append($p.contents());
-                $p.remove();*/
+                $p.remove();
                 // at this point, we now have a paragraph that holds text AND images
                 // we mark that paragraph to be a floating environment
             });
