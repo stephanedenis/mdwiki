@@ -43,10 +43,12 @@
             'achtung', 'attention', 'warnung',
             'warning', 'atención', 'guarda', 'advertimiento'
         ];
-        var hint = ['hint', 'tipp', 'tip', 'hinweis'];
+        var hint = ['hint', 'tipp', 'tip', 'hinweis', 'astuce'];
+        var danger = ['danger', 'achtung', 'peligro'];
         var exp = note
             .concat(warning)
-            .concat(hint);
+            .concat(hint)
+            .concat(danger);
         var txt = text.toLowerCase();
 
         // check against each expression
@@ -65,6 +67,9 @@
                     return false;
                 } else if ($.inArray(trigger, hint) >= 0) {
                     returnval = 'hint';
+                    return false;
+                } else if ($.inArray(trigger, danger) >= 0) {
+                    returnval = 'danger';
                     return false;
                 }
             }
@@ -93,6 +98,9 @@
             
             case 'hint':
                 $p.className += ' alert-success';
+
+            case 'danger':
+                $p.className += ' alert-danger';
             }
         });
 
