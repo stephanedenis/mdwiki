@@ -7,5 +7,8 @@ In order to run MDwiki on your website, your server need to be able tohave and s
   * [More info on how to customize MDwiki](http://dynalon.github.io/mdwiki/#!customizing.md)
 * `navigation.md`
   If you want/need a header nav bar. This markdown file consist in a listing of links.
+
+ Note: Exemple of a link to put in the navigation.md `[MDwiki](index.md)`
+
 * `mdwiki.html`
   This file is the (up to date) `mdwiki.html` that can be renamed to what you want or need it to.
