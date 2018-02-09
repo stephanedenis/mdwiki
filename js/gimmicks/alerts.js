@@ -22,6 +22,8 @@
             $p.addClass('alert-success');
         } else if (type === 'warning') {
             $p.addClass('alert-warning');
+        } else if (type === 'danger') {
+            $p.addClass('alert-danger');
         }
         $p.text(text);
         $(domElement).replaceWith($p);

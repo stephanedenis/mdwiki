@@ -40,12 +40,12 @@ declare var MDwikiEnableDebug: any;
                 }
 
                 // Validation of the href 
-                 var parser = document.createElement('a');
-                 parser.href = href;
-                 if (window.location.hostname != parser.hostname) {
-                   // fall to default
-                   href = 'index.md';
-               }
+                var parser = document.createElement('a');
+                parser.href = href;
+                if (window.location.hostname != parser.hostname) {
+                    // fall to default
+                    href = 'index.md';
+                }
 
                 href = decodeURIComponent(href);
 
