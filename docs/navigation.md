@@ -6,4 +6,3 @@
 [How to run](RunMDWiki.md)
 [Test Plan](TestPlan.md)
 [Staging system](Stages.md)
-[Testing](DevTest.md)
