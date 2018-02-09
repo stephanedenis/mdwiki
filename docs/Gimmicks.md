@@ -12,30 +12,23 @@ Gimmicks are used in a markdown files and are written as followed in them:
 
 ### How
 
-#### Single line
+* Single line
+    A single line gimmick should be written like that:
+    ![singleLineNoParams](img/singleLineNoParams.png)
+    or like that:
+    ![singleLineWithParams](img/singleLineWithParams.png)
+* Multi line
+    A multiline gimmick should be written like that:
+    ![multiline](img/multiline.png)
 
-  A single line gimmick should be written like that:
-  ![singleLineNoParams](/img/singleLineNoParams.png)
+    Note: multiline gimmicks can't have options. If a "multiline" gimmick has options, it will be considered a singleline gimmick by the sytstem.
 
-  or like that:
-  ![singleLineWithParams](/img/singleLineWithParams.png)
-
-#### Multi line
-
-  A multiline gimmick should be written like that:
-  ![multiline](/img/multiline.png)
-
-  Note: multiline gimmicks can't have options. If a "multiline" gimmick has options, it will be considered a singleline gimmick by the sytstem.
-
-#### Link
-
-  A link gimmick should be written like that:
-  ![linkNoParams](/img/linkNoParams.png)
-
-  or like that:
-  ![linkWithParams](/img/linkWithParams.png)
-
-  [More infos about link gimmicks](http://dynalon.github.io/mdwiki/#!gimmicks.md)
+* Link
+    A link gimmick should be written like that:
+    ![linkNoParams](img/linkNoParams.png)
+    or like that:
+    ![linkWithParams](img/linkWithParams.png)
+    [More infos about link gimmicks](http://dynalon.github.io/mdwiki/#!gimmicks.md)
 
 ## How it works (internally)
 

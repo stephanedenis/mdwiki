@@ -13,7 +13,7 @@ Look on the left of the page
 * test
 * test2
 
->This is a paragraph
+> This is a paragraph
 that continue
 
 *Italics* OR _Italics_
@@ -26,9 +26,28 @@ that continue
 
 ## Images
 
+### Multiple images
+
 ![](http://placekitten.com/g/1200/300 "A kitten")
 
-## alerts
+![](http://placekitten.com/g/550/450 "First of two kittens")
+![](http://placekitten.com/g/550/450 "Second of two kittens")
+
+![](http://placekitten.com/g/400/350)
+![](http://placekitten.com/g/400/350)
+![](http://placekitten.com/g/400/350)
+
+### Image floating
+![](http://placekitten.com/g/800/800)
+The above image floats left to this text.
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+The images below float right to this text.
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+![](http://placekitten.com/g/600/600)
+![](http://placekitten.com/g/600/600)
+
+## Alerts (Bootstrap)
 
 This is a warning in yellow:
 
@@ -42,7 +61,7 @@ This is a hint in green:
 
 Hint: This is a hint
 
-## Missing gimmick
+## Missing gimmick (non existing/not implemented gimmicks)
 
 `gimmick:qwerty ({ID: '1', o: {l:'lol'}})`
 `gimmick:abcdef`
@@ -56,7 +75,7 @@ Hint: This is a hint
 
 [gimmick:SLNK ({ID:3})](l)
 
-## prism
+## Prism (code syntax coloring)
 
 ~~~ csharp
 int a = 10;
@@ -66,11 +85,11 @@ int b = 15;
 int c = a + b;
 ~~~
 
-## youtube_embed
+## Embed Youtube
 
 [](http://www.youtube.com/watch?v=RMINSD7MmT4)
 
-## plantuml
+## Plantuml
 
 This is a plantuml graphic
 
@@ -85,7 +104,6 @@ component "mdwiki.html" as mdwiki{
     [node]
 }
 
-
 [config.json] as config
 [navigation.md] as navigation
 [googlemaps] as googlemaps
@@ -98,7 +116,6 @@ component "mdwiki.html" as mdwiki{
 [youtube embed] as youtube
 [yuml] as yuml
 [plantuml] as plantuml
-
 
 mdwiki -up-> config
 mdwiki -up-> navigation
@@ -113,9 +130,8 @@ Http ---> twitter
 Http ---> youtube
 Http ---> yuml
 Http ---> plantuml
-
 ```
 
-## disqus
+## Disqus
 
 [gimmick:disqus](comradeNixco)
