@@ -1,11 +1,11 @@
-How to Run MDWiki
-====
+# How to Run MDWiki
 
-Files required
----
-In the dist folder add
+In order to run MDwiki on your website, your server need to be able tohave and serve the following files:
 
 * `config.json`
-  * [Customizing MDwiki](http://dynalon.github.io/mdwiki/#!customizing.md)
+  To configure the behavioour of MDwiki
+  * [More info on how to customize MDwiki](http://dynalon.github.io/mdwiki/#!customizing.md)
 * `navigation.md`
-* the `mdwiki` html file
+  If you want/need a header nav bar. This markdown file consist in a listing of links.
+* `mdwiki.html`
+  This file is the (up to date) `mdwiki.html` that can be renamed to what you want or need it to.
