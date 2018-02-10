@@ -69,7 +69,9 @@ module.exports = function(grunt) {
         // * ALWAYS ADD EACH FILE TO BOTH minified/unminified SECTIONS!
         cssFiles: [
             'tmp/main.min.css',
-            'bower_components/bootstrap/dist/css/bootstrap.min.css'
+        ],
+        externalCssFiles: [
+            'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
         ],
         jsFiles: [
             'bower_components/jquery/jquery.min.js',
