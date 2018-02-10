@@ -18,7 +18,8 @@ module MDwiki.Core {
         pageMenu: {
             disable: false,
             returnAnchor: "[top]",
-            useHeadings: "h2"
+            useHeadings: "h2",
+            useHeadings2: "h3",
         },
         parseHeader: false
     };

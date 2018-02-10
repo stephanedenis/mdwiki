@@ -216,6 +216,7 @@ module MDwiki.Legacy {
         private createPageContentMenu () {
             // assemble the menu
             var $headings = $('#md-content').find(this.config.pageMenu.useHeadings);
+            var $headings2 = $('#md-content').find(this.config.pageMenu.useHeadings2);
 
             $headings.children().remove();
 
@@ -275,9 +276,11 @@ module MDwiki.Legacy {
             var $ul = $pannel.find("ul");
             affixDiv.append($pannel);
 
+
             function createMenuItem(heading, className) {
                 var $heading = $(heading);
                 var $a = $('<a class="list-group-item" />');
+                var $l;
                 $a.addClass(className);
                 $a.attr('href', util.getInpageAnchorHref($heading.toptext()));
                 $a.click(function(ev) {
@@ -288,7 +291,14 @@ module MDwiki.Legacy {
                     $.md.scrollToInPageAnchor(anchortext);
                 });
                 $a.text($heading.toptext());
-                return $a;
+                if($heading[0].localName == 'h2') {
+                    $l = $('<li>');
+                }
+                else {
+                    $l = $('<ul></ul>');
+                }
+                $l.append($a);
+                return $l;
             }
 
             $($headings).each(function(i,e) {
@@ -296,7 +306,17 @@ module MDwiki.Legacy {
                 var currLevel = parseInt(hClass.substr(1,1), 10);
                 var $hli = createMenuItem(e, hClass.toLowerCase() + '-nav');
 
+                $($headings[i]).nextUntil($headings[i + 1], 'h3').each(function(i,e) {
+                //$($headings2).each(function(i,e) {
+                    var hClass = $(e).prop('tagName');
+                    var currLevel = parseInt(hClass.substr(1,1), 10);
+                    var $hli2 = createMenuItem(e, hClass.toLowerCase() + '-nav');
+
+                    $hli.append($hli2);
+                });
+                $hli.append('</li>')
                 $ul.append($hli);
+
             });
 
             $(window).resize(() => {
