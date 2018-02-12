@@ -276,7 +276,6 @@ module MDwiki.Legacy {
             var $ul = $pannel.find("ul");
             affixDiv.append($pannel);
 
-
             function createMenuItem(heading, className) {
                 var $heading = $(heading);
                 var $a = $('<a class="list-group-item" />');
@@ -301,19 +300,21 @@ module MDwiki.Legacy {
                 return $l;
             }
 
+            var configH3 = this.config.sideMenuH3;
             $($headings).each(function(i,e) {
                 var hClass = $(e).prop('tagName');
                 var currLevel = parseInt(hClass.substr(1,1), 10);
                 var $hli = createMenuItem(e, hClass.toLowerCase() + '-nav');
 
-                $($headings[i]).nextUntil($headings[i + 1], 'h3').each(function(i,e) {
-                //$($headings2).each(function(i,e) {
-                    var hClass = $(e).prop('tagName');
-                    var currLevel = parseInt(hClass.substr(1,1), 10);
-                    var $hli2 = createMenuItem(e, hClass.toLowerCase() + '-nav');
-
-                    $hli.append($hli2);
-                });
+                if(configH3 !== false){
+                    $($headings[i]).nextUntil($headings[i + 1], 'h3').each(function(i,e) {
+                        var hClass = $(e).prop('tagName');
+                        var currLevel = parseInt(hClass.substr(1,1), 10);
+                        var $hli2 = createMenuItem(e, hClass.toLowerCase() + '-nav');
+                    
+                        $hli.append($hli2);
+                    });
+                }
                 $hli.append('</li>')
                 $ul.append($hli);
 
