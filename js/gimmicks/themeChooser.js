@@ -27,39 +27,69 @@
 
     // creates the "Select Theme" navbar entry
     var themechooserBuilder = function($elem, opt, text, tc) {
-        $this = $($elem);
-        // TODO: Correct this code to make a drop down menu in place of a fulkl on menu
-        var $chooser = $('<a href=""></a><ul></ul>');
-        $chooser.eq(0).text(text);
+        var $menu = $('<div/>').addClass('dropdown');
+        $menu.append(
+            $('<button/>')
+            .text(text)
+            .addClass('btn btn-primary dropdown-toggle')
+            .attr('type', 'button')
+            .attr('data-toggle', 'dropdown')
+            .append(
+                $('<span/>')
+                .addClass('caret')
+            )
+        );
 
-        $.each(tc.themeNames, function(i, themeName) {
-            var $li = $('<li></li>');
-            $chooser.eq(1).append($li);
+        var $menuContent;
 
-            var $a = $('<a/>')
-                .text(themeName)
-                .attr('href', '')
-                .click(function(ev) {
-                    ev.preventDefault();
-                    tc.currentTheme = themeName;
-                    window.location.reload();
-                })
-                .appendTo($li);
-        });
+        if($elem.parents('.navbar').length > 0) {
+            // TODO: Test particular styling when the themeChooser is in a navbar (I.E. added in the `navigation.md` file)
+        } else {
+            $menuContent = $('<ul/>').addClass('dropdown-menu');
+            $.each(tc.themeNames, function(i, name) {
+                $menuContent.append(
+                    $('<li/>')
+                    .append(
+                        $('<a/>')
+                        .text(name)
+                        .attr('href', '')
+                        .click(function(e) {
+                            e.preventDefault();
+                            tc.currentTheme = name;
+                            window.location.reload();
+                        })
+                    )
+                );
+            });
 
-        $chooser.eq(1).append('<li class="divider" />');
-        var $li = $('<li/>');
-        var $a_use_default = $('<a>Use default</a>');
-        $a_use_default.click(function(ev) {
-            ev.preventDefault();
-            tc.currentTheme = '';
-            window.location.reload();
-        });
-        $li.append($a_use_default);
-        $chooser.eq(1).append($li);
+            $menuContent.append([
+                $('<li/>')
+                .addClass('divider'),
+                
+                $('<li/>')
+                .append(
+                    $('<a/>')
+                    .text('Use default')
+                    .click(function(e) {
+                        e.preventDefault();
+                        tc.currentTheme = '';
+                        window.location.reload();
+                    })
+                ),
 
-        $chooser.eq(1).append('<li class="divider" />');
-        $chooser.eq(1).append('<li><a href="http://www.bootswatch.com">Powered by Bootswatch</a></li>');
-        $this.replaceWith($chooser);
+                $('<li/>')
+                .addClass('divider'),
+
+                $('<li/>')
+                .append(
+                    $('<a/>')
+                    .text('Powered by Bootswatch')
+                    .attr('href', 'http://www.bootswatch.com')
+                )
+            ]);
+        }
+
+        $menu.append($menuContent);
+        $elem.replaceWith($menu);
     };
 }(jQuery));
