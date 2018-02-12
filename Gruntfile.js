@@ -57,6 +57,7 @@ module.exports = function(grunt) {
             'js/gimmicks/youtube_embed.js',
             //'js/gimmicks/yuml.js',
             'js/gimmicks/plantuml.js',
+            'js/gimmicks/themeChooser.js',
 
             // default gimmicks
             'js/gimmicks/defaults/singleline.js',

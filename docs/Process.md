@@ -1,4 +1,4 @@
-# MDwiki loading and run process.
+# MDwiki loading and run process
 
 ## Initialisation and before stages
 
