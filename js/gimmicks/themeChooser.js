@@ -27,12 +27,16 @@
 
     // creates the "Select Theme" navbar entry
     var themechooserBuilder = function($elem, opt, text, tc) {
-        var $menu = $('<div/>').addClass('dropdown');
-        $menu.append(
-            $('<button/>')
+        var isInNav = $elem.parents('.navbar').length > 0;
+        var $menu = 
+        (isInNav ? $('<li/>') : $('<div/>'))
+        .addClass('dropdown')
+        .append(
+            (isInNav ? $('<a/>') : $('<button/>').addClass('btn btn-primary'))
             .text(text)
-            .addClass('btn btn-primary dropdown-toggle')
+            .addClass('dropdown-toggle')
             .attr('type', 'button')
+            .attr('href', '#')
             .attr('data-toggle', 'dropdown')
             .append(
                 $('<span/>')
@@ -40,56 +44,53 @@
             )
         );
 
-        var $menuContent;
-
-        if($elem.parents('.navbar').length > 0) {
-            // TODO: Test particular styling when the themeChooser is in a navbar (I.E. added in the `navigation.md` file)
-        } else {
-            $menuContent = $('<ul/>').addClass('dropdown-menu');
-            $.each(tc.themeNames, function(i, name) {
-                $menuContent.append(
-                    $('<li/>')
-                    .append(
-                        $('<a/>')
-                        .text(name)
-                        .attr('href', '')
-                        .click(function(e) {
-                            e.preventDefault();
-                            tc.currentTheme = name;
-                            window.location.reload();
-                        })
-                    )
-                );
-            });
-
-            $menuContent.append([
-                $('<li/>')
-                .addClass('divider'),
-                
+        var $menuContent = $('<ul/>').addClass('dropdown-menu');
+        
+        $.each(tc.themeNames, function(i, name) {
+            $menuContent
+            .append(
                 $('<li/>')
                 .append(
                     $('<a/>')
-                    .text('Use default')
+                    .text(name)
+                    .attr('href', '')
                     .click(function(e) {
                         e.preventDefault();
-                        tc.currentTheme = '';
+                        tc.currentTheme = name;
                         window.location.reload();
                     })
-                ),
-
-                $('<li/>')
-                .addClass('divider'),
-
-                $('<li/>')
-                .append(
-                    $('<a/>')
-                    .text('Powered by Bootswatch')
-                    .attr('href', 'http://www.bootswatch.com')
                 )
-            ]);
-        }
+            );
+        });
+
+        $menuContent
+        .append([
+            $('<li/>')
+            .addClass('divider'),
+            
+            $('<li/>')
+            .append(
+                $('<a/>')
+                .text('Use default')
+                .click(function(e) {
+                    e.preventDefault();
+                    tc.currentTheme = '';
+                    window.location.reload();
+                })
+            ),
+
+            $('<li/>')
+            .addClass('divider'),
+
+            $('<li/>')
+            .append(
+                $('<a/>')
+                .text('Powered by Bootswatch')
+                .attr('href', 'http://www.bootswatch.com')
+            )
+        ]);
 
         $menu.append($menuContent);
-        $elem.replaceWith($menu);
+        $elem.parent().replaceWith($menu);
     };
 }(jQuery));
