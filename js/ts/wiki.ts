@@ -69,6 +69,19 @@ module MDwiki.Core {
                 done();
             });
 
+            // If the user has set the theme in config
+            this.stages.getStage('bootstrap').subscribe((done) => {
+                // TODO: search for link tag of bootstrap and replace it with the theme
+                if(this.config.useTheme !== null && this.config.useTheme !== undefined && this.config.useTheme.toLowerCase() !== 'default') {
+                    var theme = new MDwiki.Core.BootswatchTheme(this.config.useTheme);
+                    $('link[rel=stylesheet][href*="bootstrapcdn.com"]')
+                    .replaceWith(
+                        $('<link rel="stylesheet" type="text/css">').attr('href', theme.styles[0])
+                    );
+                }
+                done();
+            })
+
             this.stages.getStage('bootstrap').subscribe((done) => {
                 var bootstrapper = new MDwiki.Legacy.Bootstrap(this.stages, this.config);
                 bootstrapper.bootstrapify();
@@ -159,7 +172,7 @@ module MDwiki.Core {
             this.stages.getStage('transform').subscribe(function(done) {
                 if (navMD === '') {
                     var log = $.md.getLogger();
-                    log.info('no navgiation.md found, not using a navbar');
+                    log.info('no navigation.md found, not using a navbar');
                     done();
                     return;
                 }
