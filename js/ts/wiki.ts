@@ -14,11 +14,13 @@ module MDwiki.Core {
         title:  null,
         lineBreaks: 'gfm',
         additionalFooterText: '',
+        sideMenuH3: true,
         anchorCharacter: '&para;',
         pageMenu: {
             disable: false,
             returnAnchor: "[top]",
-            useHeadings: "h2"
+            useHeadings: "h2",
+            useHeadings2: "h3",
         },
         parseHeader: false
     };
