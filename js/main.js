@@ -7,5 +7,6 @@
     else
         $.md.initMDwiki(undefined, true);
 
+    //$.md.wiki.gimmicks.registerGimmick(new MDwiki.Core.ThemeChooserGimmick());
 
 }(jQuery));
