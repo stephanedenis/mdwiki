@@ -94,6 +94,10 @@ int c = a + b;
 
 [](http://www.youtube.com/watch?v=RMINSD7MmT4)
 
+## Theme chooser
+
+[gimmick:ThemeChooser](This is a theme chooser)
+
 ## Plantuml
 
 This is a plantuml graphic

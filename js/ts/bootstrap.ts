@@ -300,7 +300,7 @@ module MDwiki.Legacy {
                 return $l;
             }
 
-            var configH3 = this.config.sideMenuH3;
+            var configH3 = this.config.useSideSubMenu;
             $($headings).each(function(i,e) {
                 var hClass = $(e).prop('tagName');
                 var currLevel = parseInt(hClass.substr(1,1), 10);

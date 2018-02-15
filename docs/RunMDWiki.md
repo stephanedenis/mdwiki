@@ -1,5 +1,7 @@
 # How to Run MDWiki
 
+## Needed files
+
 In order to run MDwiki on your website, your server need to be able tohave and serve the following files:
 
 * `config.json`
@@ -12,3 +14,11 @@ In order to run MDwiki on your website, your server need to be able tohave and s
 
 * `mdwiki.html`
   This file is the (up to date) `mdwiki.html` that can be renamed to what you want or need it to.
+
+## Configuration
+
+You can configure MDwiki with the `config.json` file. These are some of the options available:
+Option name|possible value
+-----------|--------------
+`useTheme` | `"Theme name"`
+`useSideSubMenu` | `true` or `false`

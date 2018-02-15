@@ -14,7 +14,7 @@ module MDwiki.Core {
         title:  null,
         lineBreaks: 'gfm',
         additionalFooterText: '',
-        sideMenuH3: true,
+        useSideSubMenu: true,
         anchorCharacter: '&para;',
         pageMenu: {
             disable: false,
@@ -73,7 +73,6 @@ module MDwiki.Core {
 
             // If the user has set the theme in config
             this.stages.getStage('bootstrap').subscribe((done) => {
-                // TODO: search for link tag of bootstrap and replace it with the theme
                 if(this.config.useTheme !== null && this.config.useTheme !== undefined && this.config.useTheme.toLowerCase() !== 'default') {
                     var theme = new MDwiki.Core.BootswatchTheme(this.config.useTheme);
                     $('link[rel=stylesheet][href*="bootstrapcdn.com"]')
