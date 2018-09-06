@@ -20,6 +20,10 @@ How to build from source
 (applies to master branch, stable may differ)
 
 1. Install node.js >= 0.10 and npm (if not included)
+```
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt install -y nodejs
+```
 2. Clone the mdwiki repo
 3. Install deps and build MDwiki (you need automake installed - if you are on Windows check the contents of the Makefile for the list of commands to run them manually):
 
@@ -36,7 +40,3 @@ For development, use
     grunt devel 
 
 To get unminified source code compiled to `dist/mdwiki-debug.html`, as well as auto file watching and livereload support. Symlink the development mdwiki file into your webroot for testing.
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Dynalon/mdwiki/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-

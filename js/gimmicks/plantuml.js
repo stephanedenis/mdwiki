@@ -9,7 +9,7 @@
         $('code[class*="language-plantuml"], [class*="language-plantuml"] code, code[class*="lang-plantuml"], [class*="lang-plantuml"] code').each(function(){
                 var $this = $(this);
                 var data = $this[0].innerText;
-                var $img = $('<img src="' + getImageUrlFromPlantUmlCode(data) + '">');
+                var $img = $(getSvgFromPlantUmlCode(data) );
                 $this.parent().replaceWith($img);
             });
         
@@ -66,11 +66,19 @@
         return r;
     }
     
+    function httpGet(theUrl)
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+        xmlHttp.send( null );
+        return xmlHttp.responseText;
+    }
     
-    
-    function getImageUrlFromPlantUmlCode(s) {
+    function getSvgFromPlantUmlCode(s) {
         //UTF8
-        return ("http://www.plantuml.com/plantuml/img/" + encode64(pako.deflate(s)));
+        var url = "http://www.plantuml.com/plantuml/svg/" + encode64(pako.deflate(s));
+        var svg = httpGet(url);
+        return (svg.replace('<?xml version="1.0" encoding="UTF-8" standalone="no"?>',""));
     }
     
 
