@@ -38,6 +38,7 @@ module.exports = function(grunt) {
             'js/bootstrap.js',
 
             // gimmicks
+            'js/gimmicks/plantuml.js',
             'js/gimmicks/templating.js',
             'js/gimmicks/prism.js',
 
@@ -48,7 +49,7 @@ module.exports = function(grunt) {
             'js/gimmicks/disqus.js',
             //'js/gimmicks/editme.js',
             //'js/gimmicks/facebooklike.js',
-            //'js/gimmicks/forkmeongithub.js',
+            'js/gimmicks/forkmeongithub.js',
             //'js/gimmicks/gist.js',
             //'js/gimmicks/iframe.js',
             //'js/gimmicks/math.js',
@@ -56,7 +57,6 @@ module.exports = function(grunt) {
             //'js/gimmicks/twitter.js',
             'js/gimmicks/youtube_embed.js',
             //'js/gimmicks/yuml.js',
-            'js/gimmicks/plantuml.js',
             'js/gimmicks/themeChooser.js',
 
             // default gimmicks

@@ -1,7 +1,7 @@
 (function($) {
     var slGimmick = new MDwiki.Gimmick.Gimmick('defaultsl');
     var slHandler = new MDwiki.Gimmick.GimmickHandler('singleline');
-    slHandler.loadStage = 'pregimmick';
+    slHandler.loadStage = 'gimmick';
 
     slHandler.callback = function (params, done) {
         var trigger = params.options.__originalTrigger__;
