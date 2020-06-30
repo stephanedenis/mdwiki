@@ -36,7 +36,10 @@ module MDwiki.Legacy {
             if ($.trim($pageTitle.toptext()).length > 0) {
                 this.domElement.find('#md-title').prepend($pageTitle);
                 title = $pageTitle.toptext();
-                // document.title = title;
+                if(title != undefined && title != ""){
+                    document.title = title;
+                }
+
             } else {
                 this.domElement.find('#md-title').remove();
             }
