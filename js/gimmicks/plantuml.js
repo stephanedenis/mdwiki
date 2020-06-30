@@ -76,9 +76,14 @@
     
     function getSvgFromPlantUmlCode(s) {
         //UTF8
-        var url = "http://www.plantuml.com/plantuml/svg/" + encode64(pako.deflate(s));
-        var svg = httpGet(url);
-        return (svg.replace('<?xml version="1.0" encoding="UTF-8" standalone="no"?>',""));
+        var url = "https://www.plantuml.com/plantuml/svg/~1" + encode64(pako.deflate(s));
+        try{
+            var svg = httpGet(url);
+            return (svg.replace('<?xml version="1.0" encoding="UTF-8" standalone="no"?>',""));
+        }
+        catch(e){
+            return '<div style="border-size:2px;border-color:coral;color:red;font-size:8px">ERROR '+e.name + ' with PlantUML : '+e.message+" </div>";
+        }
     }
     
 
