@@ -1,3 +1,7 @@
+See https://stephanedenis.github.io/mdwiki for documentation about this fork
+
+---
+
 [![Build Status](https://travis-ci.org/Dynalon/mdwiki.png?branch=master)](https://travis-ci.org/Dynalon/mdwiki)
 
 
