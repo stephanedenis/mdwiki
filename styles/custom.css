@@ -2,3 +2,9 @@
  * Custom CSS file
  * PLACE HERE YOUR CUSTOM STYLESHEETS TO PERSONALIZE MDWIKI
  */
+
+ /* Overrides existing rule. Avoid shifting big PlantUML diagrams*/
+ div#md-body-container {
+     width: 100% !important;
+     margin:0;
+ }
