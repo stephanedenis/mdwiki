@@ -1,3 +1,8 @@
+## mdwiki is obsolete. 
+
+Consider using my new ultralight application https://ontowave.org instead of this one.
+
+
 See https://stephanedenis.github.io/mdwiki for documentation about this fork
 
 ---
